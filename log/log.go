@@ -1,6 +1,8 @@
 package log
 
-import "sync"
+import (
+	"sync"
+)
 
 var (
 	logger logs
@@ -33,6 +35,12 @@ func Error(format string, val ...interface{}) {
 }
 func Fatal(format string, val ...interface{}) {
 	do(NewCallerInfo(LevelFatal, DefaultDepth), format, val...)
+}
+func Flush() {
+	if logger == nil {
+		initLogger()
+	}
+	logger.Flush()
 }
 
 func do(caller *CallerInfo, format string, val ...interface{}) {

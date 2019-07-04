@@ -21,7 +21,7 @@ var (
 	levelColorPrefixMap = map[Level]string{
 		LevelTrace: "\x1b[0;37m",
 		LevelDebug: "\x1b[0;36m",
-		LevelInfo:  "\x1b[0;35m",
+		LevelInfo:  "\x1b[0;34m",
 		LevelWarn:  "\x1b[0;33m",
 		LevelError: "\x1b[0;31m",
 		LevelFatal: "\x1b[0;31;47m",

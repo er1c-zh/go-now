@@ -33,9 +33,9 @@ func main() {
     	Exit()
     }()
     
-	WaitExit(0) // block until receive exit signal
-	
-	// or execute ExitHandlers with timeout
-	// WaitExit(10 * time.Second)
+    WaitExit(0) // block until receive exit signal
+
+    // or execute ExitHandlers with timeout
+    // WaitExit(10 * time.Second)
 }
 ```

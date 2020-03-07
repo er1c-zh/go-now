@@ -56,7 +56,7 @@ func Exit() {
 有超时时间，传0为无超时时间
 */
 func WaitExit(expireTime time.Duration) {
-	signal.Notify(systemSignalChan, syscall.SIGTERM)
+	signal.Notify(systemSignalChan, syscall.SIGTERM, syscall.SIGINT)
 
 	toExit := false
 	for !toExit {

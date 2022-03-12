@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	logger logs
+	logger Logger
 
 	once sync.Once
 )
@@ -16,6 +16,10 @@ func initLogger() {
 
 func initLoggerDefault() {
 	logger = NewConsoleLogger()
+}
+
+func SetLogger(_logger Logger) {
+	logger = _logger
 }
 
 func Trace(format string, val ...interface{}) {

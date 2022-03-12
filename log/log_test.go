@@ -42,3 +42,13 @@ func TestCallerInfo(t *testing.T) {
 
 	t.Logf("%+v", caller)
 }
+
+func TestFileLogger(t *testing.T) {
+	SetLogger(NewFileLogger("/var/tmp/go-now/file_logger.log"))
+	Trace("num: %d, string: %s, struct: %+v", LevelTrace, "trace", NewCallerInfo(LevelTrace, 1))
+	Debug("num: %d, string: %s, struct: %+v", LevelDebug, "debug", NewCallerInfo(LevelDebug, 1))
+	Info("num: %d, string: %s, struct: %+v", LevelInfo, "info", NewCallerInfo(LevelInfo, 1))
+	Warn("num: %d, string: %s, struct: %+v", LevelWarn, "Warn", NewCallerInfo(LevelWarn, 1))
+	Error("num: %d, string: %s, struct: %+v", LevelError, "Error", NewCallerInfo(LevelError, 1))
+	Fatal("num: %d, string: %s, struct: %+v", LevelFatal, "Fatal", NewCallerInfo(LevelFatal, 1))
+}
